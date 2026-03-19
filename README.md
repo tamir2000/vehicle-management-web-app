@@ -1,29 +1,25 @@
-# Vehicle Management Web Application
-Database-driven web application built using SQL and HTML for managing and analyzing vehicle service data.
+# Israel Motors - Vehicle Management System
 
-# Database-Driven Web Application (SQL & HTML)
+A full-stack database-driven web application for managing car services, rentals, and customer data.
 
-## Overview
-Developed a web-based system for managing and analyzing vehicle service data using a relational database and SQL queries.
+## 🚀 Features
+- Relational database design (SQL Server)
+- Web interface built with Flask (Python)
+- Schedule car treatments
+- Inspect past rentals by customer
+- Analytical query: Top workers by service activity
 
-## Features
-- Designed relational database (ERD)
-- Built SQL queries for data insertion and analysis
-- Created HTML interface for user interaction
-- Implemented forms for data input and reporting
+## 🧠 Key Highlight
+Identified workers who handled 10+ vehicles in 2025 using SQL aggregation and joins.
 
-## Data Analysis
-- Queried employee activity and service performance
-- Used SQL aggregation to identify patterns
-- Extracted insights from structured data
-- Identified high-performing employees based on number of serviced vehicles
+## 🛠️ Technologies
+- Python (Flask)
+- SQL Server
+- HTML + CSS
+- PyODBC
 
-## Technologies
-- SQL
-- HTML
-- Relational Database
+## 📂 Project Structure
 
-## How to Run
-1. Open the HTML file in a browser
-2. Connect to the database (if applicable)
-3. Execute SQL queries to interact with the system
+ ## ⚠️ Note
+This project is designed to run locally using Flask and SQL Server.
+A live deployment is not included, but all components (backend, database, and frontend) are fully implemented.
