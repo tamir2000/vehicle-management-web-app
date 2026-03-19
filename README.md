@@ -16,6 +16,7 @@ Developed a web-based system for managing and analyzing vehicle service data usi
 - Queried employee activity and service performance
 - Used SQL aggregation to identify patterns
 - Extracted insights from structured data
+- Identified high-performing employees based on number of serviced vehicles
 
 ## Technologies
 - SQL
