@@ -22,3 +22,8 @@ Developed a web-based system for managing and analyzing vehicle service data usi
 - SQL
 - HTML
 - Relational Database
+
+## How to Run
+1. Open the HTML file in a browser
+2. Connect to the database (if applicable)
+3. Execute SQL queries to interact with the system
