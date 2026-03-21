@@ -32,7 +32,7 @@ This system enables efficient tracking of vehicle services and worker performanc
 
 ---
 
-## 🛠️ Technologies
+## Technologies
 
 - Python (Flask)
 - SQL Server
