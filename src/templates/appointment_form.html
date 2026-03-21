@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+    </head>
+    <body>
+        <nav class="sidebar">
+            <div class="nav-link">
+                <a href="{{ url_for('appointment_frame') }}">Schedule a car treatment</a>
+            </div>
+            <div class="nav-link">
+                <a href="{{ url_for('inspect_frame') }}">Inspect a past rental</a>
+            </div>
+
+            <div class="nav-link">
+                <a href="{{ url_for('home_frame') }}">Home</a>
+            </div>
+        </nav>
+        <main class="main-content">
+            
+            <h1>Schedule a car treatment</h1>
+
+            <form class="treatment-form" action="{{ url_for('submit_appointment') }}" method="POST">
+                <div class="form-group">
+                    <label for="vehicle_id">Car number:</label>
+                    <select id="vehicle_id" name="vehicle_id" required>
+                        <option value="" disabled selected hidden>Select a car number</option>
+                        {% for car in cars %}
+                            <option value="{{ car.SoldCarNum }}">{{ car.SoldCarNum }}</option>
+                        {% endfor %}        
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="employee_id">Worker ID:</label>
+
+                    <select id="employee_id" name="employee_id" required>
+                        <option value="" disabled selected hidden>Select a worker by ID</option>
+                        {% for worker in workers %}
+                            <option value="{{ worker.WorkerNum }}">{{ worker.WorkerNum }}</option>
+                        {% endfor %}
+                    </select>
+
+                </div>
+                <div class="form-group">
+                    <label for="treatment_date">Treatment date:</label>
+                    <input type="date" id="treatment_date" name="treatment_date" required>
+                </div>
+                <div class="form-group">
+                    <label for="treatment_cost">Treatment cost:</label>
+                    <input type="number" id="treatment_cost" name="treatment_cost" min="0" placeholder="0.00" step="0.01" required>
+                </div>
+                <button type="submit">Save treatment</button>
+            </form>
+            {% if success_message %}
+                <div style="background-color: #d4edda; color: #155724; padding: 10px; border: 1px solid #c3e6cb; margin-bottom: 15px;">
+                    {{ success_message }}
+                </div>
+            {% endif %}
+        </main>
+    </body>
+</html>

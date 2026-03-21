@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+    </head>
+    <body>
+        <nav class="sidebar">
+            <div class="nav-link">
+                <a href="{{ url_for('appointment_frame') }}">Schedule a car treatment</a>
+            </div>
+            <div class="nav-link">
+                <a href="{{ url_for('inspect_frame') }}">Inspect a past rental</a>
+            </div>
+
+            <div class="nav-link">
+                <a href="{{ url_for('home_frame') }}">Home</a>
+            </div>
+        </nav>
+        <main class="main-content">
+            <h1>Inspect a past rental</h1>
+
+            <form class="treatment-form" action="{{ url_for('inspect_result') }}" method="POST">
+                <div class="form-group">
+                    <label for="client_id">Enter Client ID:</label>
+                    <input placeholder="ID" type="number" id="client_id" name="client_id" required>
+                </div>
+                <button type="submit">Find past rents</button>
+            </form>
+            
+            {% if error %}
+            <div class="error-box">{{ error }}</div>
+            {% endif %} 
+
+            {% if rentals %}
+            <h2>Past rentals:</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Car Number</th>
+                        <th>Manufacturer</th>
+                        <th>Year</th>
+                        <th>Color</th>
+                        <th>Cost Per Day</th>
+                        <th>Days Rented</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for rent in rentals %}
+                    <tr>
+                        <td>{{ rent.CarNum }}</td>
+                        <td>{{ rent.ManufacturerName }}</td>
+                        <td>{{ rent.CarYear }}</td>
+                        <td>{{ rent.CarColor }}</td>
+                        <td>{{ rent.CarDayPrice }}</td>
+                        <td>{{ rent.RentDays }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% endif %}
+
+        </main>
+    </body>
+</html>

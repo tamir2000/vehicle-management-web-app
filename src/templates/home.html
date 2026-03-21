@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Israel-Motors</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+</head>
+<body>
+    
+        <nav class="sidebar">
+            <div class="nav-link">
+                <a href="{{ url_for('appointment_frame') }}">Schedule a car treatment</a>
+            </div>
+            <div class="nav-link">
+                <a href="{{ url_for('inspect_frame') }}">Inspect a past rental</a>
+            </div>
+
+            <div class="nav-link">
+                <a href="{{ url_for('home_frame') }}">Home</a>
+            </div>
+        </nav>
+        <main class="main-content">
+            <h1>Israel-Motors</h1>
+
+            <div class="box img-placeholder">
+                <img src="{{ url_for('static', filename='israel_motors.jpg') }}" alt="Israel motors logo" width="50%" height: auto;>
+            </div>
+
+            <div class="box desc-placeholder">
+                Welcome to Israel-Motors!
+                Use our state of the art facilities to to tend to your car
+            </div>
+
+            <div class="data-table">
+               <h2>Workers with 10+ Services in 2025</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Worker ID</th>
+                            <th>Worker Name</th>
+                            <th>Salary</th>
+                            <th>Vehicles Handled</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for worker in workers %}
+                        <tr>
+                            <td>{{ worker.WorkerNum }}</td>
+                            <td>{{ worker.WorkerName }}</td>
+                            <td>{{ worker.WorkerSalary}}</td>
+                            <td>{{ worker.TotalVehiclesHandled }}</td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="3">No workers found meeting the criteria.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        
+</body>
+</html>
