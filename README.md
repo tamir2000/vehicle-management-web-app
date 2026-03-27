@@ -2,6 +2,7 @@
 
 A full-stack database-driven web application for managing vehicle services, rentals, and customer data.  
 This project demonstrates backend development, relational database design, and data-driven insights.
+(requires to run on flask)
 
 ---
 
